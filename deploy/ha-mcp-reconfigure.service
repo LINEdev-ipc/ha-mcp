@@ -5,6 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=simple
+EnvironmentFile=/home/hermes/.hermes/ha-mcp-reconfigure.env
 ExecStart=/home/hermes/workspace/ha-mcp/scripts/run-reconfigure-mcp
 Restart=on-failure
 RestartSec=5

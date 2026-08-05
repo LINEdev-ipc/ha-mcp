@@ -1,0 +1,18 @@
+[Unit]
+Description=Isolated Home Assistant MCP server (reconfigure branch)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/hermes/workspace/ha-mcp/scripts/run-reconfigure-mcp
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/hermes/workspace/ha-mcp /home/hermes/.cache/uv /home/hermes/.cache
+
+[Install]
+WantedBy=default.target
